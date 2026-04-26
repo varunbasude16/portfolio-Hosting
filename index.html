@@ -1,79 +1,249 @@
-<!--simple portfolio site with simple inline css-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Basude Varun | Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.7;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
+            background: linear-gradient(135deg, #1f2937, #3b82f6);
+            color: #ffffff;
+            padding: 80px 20px;
             text-align: center;
         }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        header p {
+            font-size: 1.1rem;
+            margin: 20px auto 0;
+            max-width: 760px;
+            opacity: 0.9;
+        }
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
         nav a {
-            color: #fff;
-            margin: 0 15px;
+            color: #1f2937;
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+        nav a:hover {
+            color: #2563eb;
         }
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
         section {
-            padding: 20px 0;
+            margin-bottom: 60px;
         }
-        .project {
-            background-color: #fff;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 5px;
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: #111827;
         }
-        .project h3 {
+        .card {
+            background-color: #ffffff;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            margin-bottom: 24px;
+        }
+        .card h3 {
             margin-top: 0;
+            color: #111827;
+        }
+        .highlight {
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .skills-list,
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skills-list li,
+        .features-list li {
+            background-color: #eff6ff;
+            margin-bottom: 12px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            color: #1e3a8a;
+        }
+        .section-note {
+            color: #4b5563;
+            font-size: 0.98rem;
+            margin-top: 10px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(255,255,255,0.12);
+            color: #ffffff;
+            border-radius: 999px;
+            padding: 10px 18px;
+            margin-top: 28px;
+            font-size: 0.95rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 24px 20px;
+            color: #475569;
+            font-size: 0.97rem;
+        }
+        @media (max-width: 720px) {
+            header {
+                padding: 60px 16px;
+            }
+            .container {
+                padding: 24px 16px;
+            }
+            nav .nav-container {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <h1>Basude Varun</h1>
+        <p>Pursuing B.E. at Chaitanya Bharathi Institute of Technology (CBIT). Passionate about leveraging technology for environmental solutions and capturing the world through a lens.</p>
+        <div class="hero-badge">Engineering Student • Web Developer • Creative Storyteller</div>
     </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
     <div class="container">
         <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm a passionate developer with experience in web development, software engineering, and data science. I enjoy creating innovative solutions and learning new technologies.</p>
+            <h2>Academic Profile</h2>
+            <div class="card">
+                <h3>Education</h3>
+                <p>Bachelor of Engineering, CBIT (CBIT' 29).</p>
+                <p><span class="highlight">Achievement:</span> Maintained a 9.75 SGPA in Semester 1.</p>
+                <p><span class="highlight">Programming Journey:</span> I have learned C language and am now learning C++ along with Data Structures and Algorithms (DSA) in C++.</p>
+                <p><span class="highlight">Key Coursework:</span> Programming for Problem Solving, Calculus, Engineering Mathematics, and Applied Physics.</p>
+            </div>
         </section>
 
         <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project One</h3>
-                <p>A web application that allows users to track their fitness goals and progress over time.</p>
+            <h2>Featured Project</h2>
+            <div class="card">
+                <h3>Water Quality & Remediation Web App</h3>
+                <p><strong>The Problem:</strong> Raw mineral reports are hard for the average person to understand.</p>
+                <p><strong>The Solution:</strong> A web-based tool where users input mineral data to receive a detailed breakdown of harmful metals.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul class="features-list">
+                    <li>Identification of harmful contaminants.</li>
+                    <li>Step-by-step removal instructions.</li>
+                    <li>Guidance on re-mineralization for healthy water.</li>
+                </ul>
+                <p><strong>Tech Used:</strong> HTML, CSS, and JavaScript logic for interactive guidance.</p>
+                <p><a href="https://varunbasude16.github.io/CE-project-/" target="_blank" rel="noreferrer">View the GitHub project</a></p>
+                <p><em>This was my first web project—it shows rapid learning and hands-on problem solving.</em></p>
             </div>
-            <div class="project">
-                <h3>Project Two</h3>
-                <p>A machine learning model that predicts housing prices based on various features.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience & Workshops</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>MLRIT Hackathon Participant</h3>
+                    <p>Participated in a team-based hackathon with a focus on rapid prototyping and collaborating under pressure.</p>
+                    <p class="section-note">Learned teamwork, quick solution design, and implementation of project ideas in a short timeframe.</p>
+                </div>
+                <div class="card">
+                    <h3>GitHub Workshop</h3>
+                    <p>Completed a workshop on GitHub and version control to improve code collaboration and project hosting skills.</p>
+                    <p class="section-note">Built confidence with branching, commits, and publishing code, and linked work to portfolio projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Creative Gallery</h2>
+            <div class="card">
+                <p>I enjoy photography and video editing alongside my engineering work.</p>
+                <p class="section-note">Add your best photos and a showreel of video work here to showcase creative storytelling and visual skills.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Technical Skills</h3>
+                    <ul class="skills-list">
+                        <li>C Language</li>
+                        <li>C++ with DSA</li>
+                        <li>Web Development (HTML/CSS)</li>
+                        <li>GitHub / Git</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Creative Skills</h3>
+                    <ul class="skills-list">
+                        <li>Video Editing (Premiere Pro, CapCut)</li>
+                        <li>Color Grading</li>
+                        <li>Cinematography</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>You can reach me at <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+            <div class="card">
+                <p>If you'd like to connect, email me at <a href="mailto:basudevarun16@example.com">basudevarun16@example.com</a>.</p>
+                <p><a href="https://www.linkedin.com/in/varun-basude-7a8285378/" target="_blank" rel="noreferrer">View my LinkedIn profile</a></p>
+                <p class="section-note">Check out my GitHub profile for more projects and contributions.</p>
+            </div>
         </section>
     </div>
+
+    <footer class="footer">
+        Designed by Basude Varun • Portfolio made with clean HTML and CSS.
+    </footer>
 </body>
 </html>
